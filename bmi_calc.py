@@ -50,6 +50,7 @@ def check_input(w, h):
 def analysis(n):
     data_input()
     analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
+    bmi_output(analysis.bmi)
 
 
 def bmi_calc(w, h, n):
@@ -57,19 +58,19 @@ def bmi_calc(w, h, n):
         bmi = w/(h**2)
     elif n == 2:  # imperial
         bmi = 703*w/(h**2)
-    print("Your BMI is {:0.2f}" .format(bmi))
+    print("Your BMI is {:0.2f}." .format(bmi))
     return bmi
 
 
 def bmi_output(bmi):
     if bmi < 18.50:
-        result = "Underweight"
+        result = "underweight"
     elif 18.50 <= bmi < 24.99:
-        result = "Normal"
+        result = "normal"
     elif 25 <= bmi < 29.99:
-        result = "Overweight"
+        result = "overweight"
     else:  # bmi >30
-        result = "Obese"
+        result = "obese"
     print("Your BMI indicates that you are {}." .format(result))
 
 
