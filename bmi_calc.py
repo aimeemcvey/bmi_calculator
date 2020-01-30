@@ -1,6 +1,5 @@
 # bmi_calc.py
-weight_num = 0
-height_num = 0
+
 
 def interface():
     while True:
@@ -22,11 +21,9 @@ def data_input():
         weight_input = input("Enter weight: ")
         weight_input = weight_input.split(" ")
         weight_num = float(weight_input[0])
-        #print(weight_num)
         height_input = input("Enter height: ")
         height_input = height_input.split(" ")
         height_num = float(height_input[0])
-        #print(height_num)
         check_input(weight_num, height_num)
 
 
@@ -36,6 +33,7 @@ def check_input(w, h):
     print("Is this correct?")
     check_choice = input("  1 - Yes, 2 - No\n")
     if check_choice == '1':
+        print("On to your BMI calculation!")
         return
     elif check_choice == '2':
         print("Please re-enter weight and height")
