@@ -22,26 +22,35 @@ def data_input():
         weight_input = input("Enter weight: ")
         weight_input = weight_input.split(" ")
         weight_num = float(weight_input[0])
-        print(weight_num)
+        #print(weight_num)
         height_input = input("Enter height: ")
         height_input = height_input.split(" ")
         height_num = float(height_input[0])
-        print(height_num)
+        #print(height_num)
+        check_input(weight_num, height_num)
 
 
-def check_input():
+def check_input(w, h):
     # check if entered weight and height correct
-    print("Your weight is {}".format(weight_num))
+    print("Your weight and height were input as {} lbs/kg and {} in/m.".format(w, h))
+    print("Is this correct?")
+    check_choice = input("  1 - Yes, 2 - No\n")
+    if check_choice == '1':
+        return
+    elif check_choice == '2':
+        print("Please re-enter weight and height")
+        data_input()
+    else:
+        print("Please pick 1 or 2!")
+        check_input(w, h)
 
 
 def metric_analysis():
     data_input()
-    check_input()
 
 
 def imperial_analysis():
     data_input()
-    check_input()
 
 
 if __name__ == "__main__":
