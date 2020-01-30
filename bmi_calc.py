@@ -14,7 +14,7 @@ def interface():
             k = 1
             analysis(1)
         elif choice == '2':
-            k = 1
+            k = 2
             analysis(2)
         elif choice == '9':
             k = 1
@@ -27,11 +27,11 @@ def interface():
 def data_input():
     weight_input = input("Enter weight: ")
     weight_input = weight_input.split(" ")
-    weight_num = float(weight_input[0])
+    data_input.weight = float(weight_input[0])
     height_input = input("Enter height: ")
     height_input = height_input.split(" ")
-    height_num = float(height_input[0])
-    data_input.weight, data_input.height = check_input(weight_num, height_num)
+    data_input.height = float(height_input[0])
+    check_input(data_input.weight, data_input.height)
 
 
 def check_input(w, h):
@@ -41,7 +41,6 @@ def check_input(w, h):
     check_choice = input("  1 - Yes, 2 - No\n")
     if check_choice == '1':
         print("On to your BMI calculation!")
-        return w, h
     elif check_choice == '2':
         print("Please re-enter weight and height")
         data_input()
