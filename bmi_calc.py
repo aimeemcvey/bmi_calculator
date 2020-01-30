@@ -60,7 +60,7 @@ def bmi_calc(w, h, n):
         bmi = w/(h**2)
     elif n == 2:  # imperial
         bmi = 703*w/(h**2)
-    print("Your BMI is {}" .format(bmi))
+    print("Your BMI is {:0.2f}" .format(bmi))
     return bmi
 
 
