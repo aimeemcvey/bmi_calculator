@@ -2,9 +2,9 @@
 
 
 def interface():
+    print("BMI Calculator")
     k = 0
     while k == 0:
-        print("BMI Calculator")
         print("Options:")
         print("  1 - Metric (kg/m)")
         print("  2 - Imperial (lb/in)")
@@ -19,6 +19,9 @@ def interface():
         elif choice == '9':
             k = 1
             return
+        else:  # other number
+            k = 0
+            print("That's not an option. Select a different number.")
 
 
 def data_input():
