@@ -24,7 +24,8 @@ def data_input():
         height_input = input("Enter height: ")
         height_input = height_input.split(" ")
         height_num = float(height_input[0])
-        check_input(weight_num, height_num)
+        data_input.weight, data_input.height = check_input(weight_num, height_num)
+        #return weight, height
 
 
 def check_input(w, h):
@@ -46,13 +47,13 @@ def check_input(w, h):
 def metric_analysis():
     data_input()
     n = 1
-    bmi_calc(w, h, n)
+    bmi_calc(data_input.weight, data_input.height, n)
 
 
 def imperial_analysis():
     data_input()
     n = 2
-    bmi_calc(w, h, n)
+    bmi_calc(weight, height, n)
 
 
 def bmi_calc(w, h, n):
