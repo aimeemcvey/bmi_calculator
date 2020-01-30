@@ -16,9 +16,14 @@ def interface():
         elif choice == '9':
             return
 
+
 def data_input():
-    weight_input = input("Enter weight: ")
-    height_input = input("Enter height: ")
+        weight_input = input("Enter weight: ")
+        weight_input = weight_input.split(" ")
+        weight_num = float(weight_input[0])
+        height_input = input("Enter height: ")
+        height_input = height_input.split(" ")
+        height_num = float(height_input[0])
 
 
 def metric_analysis():
