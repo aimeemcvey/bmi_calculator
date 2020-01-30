@@ -5,8 +5,8 @@ def interface():
     while True:
         print("BMI Calculator")
         print("Options:")
-        print("  1 - Metric")
-        print("  2 - Imperial")
+        print("  1 - Metric (kg/m)")
+        print("  2 - Imperial (lb/in)")
         print("  9 - Quit")
         choice = input("Enter your option: ")
         if choice == '9':
