@@ -45,10 +45,16 @@ def check_input(w, h):
 
 def metric_analysis():
     data_input()
+    bmi_calc()
 
 
 def imperial_analysis():
     data_input()
+    bmi_calc()
+
+
+def bmi_calc(w, h):
+    bmi = w/(h**2)
 
 
 if __name__ == "__main__":
