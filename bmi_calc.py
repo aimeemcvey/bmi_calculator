@@ -1,5 +1,6 @@
 # bmi_calc.py
-
+weight_num = 0
+height_num = 0
 
 def interface():
     while True:
@@ -21,17 +22,26 @@ def data_input():
         weight_input = input("Enter weight: ")
         weight_input = weight_input.split(" ")
         weight_num = float(weight_input[0])
+        print(weight_num)
         height_input = input("Enter height: ")
         height_input = height_input.split(" ")
         height_num = float(height_input[0])
+        print(height_num)
+
+
+def check_input():
+    # check if entered weight and height correct
+    print("Your weight is {}".format(weight_num))
 
 
 def metric_analysis():
     data_input()
+    check_input()
 
 
 def imperial_analysis():
     data_input()
+    check_input()
 
 
 if __name__ == "__main__":
