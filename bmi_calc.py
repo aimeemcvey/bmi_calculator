@@ -35,7 +35,7 @@ def data_input():
 
 
 def check_input(w, h):
-    # check if entered weight and height correct
+    # check if entered weight and height correct,
     print("Your weight and height were input as {} lbs/kg and {} in/m.".format(w, h))
     print("Is this correct?")
     check_choice = input("  1 - Yes, 2 - No\n")
