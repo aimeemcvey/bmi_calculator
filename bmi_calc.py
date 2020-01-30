@@ -2,7 +2,8 @@
 
 
 def interface():
-    while True:
+    k = 0
+    while k == 0:
         print("BMI Calculator")
         print("Options:")
         print("  1 - Metric (kg/m)")
@@ -10,21 +11,24 @@ def interface():
         print("  9 - Quit")
         choice = input("Enter your option: ")
         if choice == '1':
-            metric_analysis()
+            k = 1
+            analysis(1)
         elif choice == '2':
-            imperial_analysis()
+            k = 1
+            analysis(2)
         elif choice == '9':
+            k = 1
             return
 
 
 def data_input():
-        weight_input = input("Enter weight: ")
-        weight_input = weight_input.split(" ")
-        weight_num = float(weight_input[0])
-        height_input = input("Enter height: ")
-        height_input = height_input.split(" ")
-        height_num = float(height_input[0])
-        data_input.weight, data_input.height = check_input(weight_num, height_num)
+    weight_input = input("Enter weight: ")
+    weight_input = weight_input.split(" ")
+    weight_num = float(weight_input[0])
+    height_input = input("Enter height: ")
+    height_input = height_input.split(" ")
+    height_num = float(height_input[0])
+    data_input.weight, data_input.height = check_input(weight_num, height_num)
 
 
 def check_input(w, h):
@@ -43,16 +47,10 @@ def check_input(w, h):
         check_input(w, h)
 
 
-def metric_analysis():
+def analysis(n):
     data_input()
-    n = 1
-    metric_analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
-
-
-def imperial_analysis():
-    data_input()
-    n = 2
-    imperial_analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
+    analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
+    bmi_output(analysis.bmi)
 
 
 def bmi_calc(w, h, n):
@@ -60,8 +58,20 @@ def bmi_calc(w, h, n):
         bmi = w/(h**2)
     elif n == 2:  # imperial
         bmi = 703*w/(h**2)
-    print("Your BMI is {:0.2f}" .format(bmi))
+    print("Your BMI is {:0.2f}." .format(bmi))
     return bmi
+
+
+def bmi_output(bmi):
+    if bmi < 18.50:
+        result = "underweight"
+    elif 18.50 <= bmi < 24.99:
+        result = "normal"
+    elif 25 <= bmi < 29.99:
+        result = "overweight"
+    else:  # bmi >30
+        result = "obese"
+    print("Your BMI indicates that you are {}." .format(result))
 
 
 if __name__ == "__main__":
