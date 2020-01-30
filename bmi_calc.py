@@ -2,7 +2,8 @@
 
 
 def interface():
-    while True:
+    k = 0
+    while k == 0:
         print("BMI Calculator")
         print("Options:")
         print("  1 - Metric (kg/m)")
@@ -10,21 +11,24 @@ def interface():
         print("  9 - Quit")
         choice = input("Enter your option: ")
         if choice == '1':
+            k = 1
             analysis(1)
         elif choice == '2':
+            k = 1
             analysis(2)
         elif choice == '9':
+            k = 1
             return
 
 
 def data_input():
-        weight_input = input("Enter weight: ")
-        weight_input = weight_input.split(" ")
-        weight_num = float(weight_input[0])
-        height_input = input("Enter height: ")
-        height_input = height_input.split(" ")
-        height_num = float(height_input[0])
-        data_input.weight, data_input.height = check_input(weight_num, height_num)
+    weight_input = input("Enter weight: ")
+    weight_input = weight_input.split(" ")
+    weight_num = float(weight_input[0])
+    height_input = input("Enter height: ")
+    height_input = height_input.split(" ")
+    height_num = float(height_input[0])
+    data_input.weight, data_input.height = check_input(weight_num, height_num)
 
 
 def check_input(w, h):
