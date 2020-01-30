@@ -1,4 +1,4 @@
-# bmi-calculator-aimeemcvey
+# BMI Calculator
 
 This BMI calculator accepts metric or imperial inputs to calculate the user's BMI and corresponding health condition.  
 
