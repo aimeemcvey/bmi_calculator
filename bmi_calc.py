@@ -10,9 +10,9 @@ def interface():
         print("  9 - Quit")
         choice = input("Enter your option: ")
         if choice == '1':
-            metric_analysis()
+            analysis(1)
         elif choice == '2':
-            imperial_analysis()
+            analysis(2)
         elif choice == '9':
             return
 
@@ -43,16 +43,9 @@ def check_input(w, h):
         check_input(w, h)
 
 
-def metric_analysis():
+def analysis(n):
     data_input()
-    n = 1
-    metric_analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
-
-
-def imperial_analysis():
-    data_input()
-    n = 2
-    imperial_analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
+    analysis.bmi = bmi_calc(data_input.weight, data_input.height, n)
 
 
 def bmi_calc(w, h, n):
@@ -66,13 +59,14 @@ def bmi_calc(w, h, n):
 
 def bmi_output(bmi):
     if bmi < 18.50:
-        return "Underweight"
+        result = "Underweight"
     elif 18.50 <= bmi < 24.99:
-        return "Normal"
+        result = "Normal"
     elif 25 <= bmi < 29.99:
-        return "Overweight"
-    else:  # bmi <130
-        return "Obese"
+        result = "Overweight"
+    else:  # bmi >30
+        result = "Obese"
+    print("Your BMI indicates that you are {}." .format(result))
 
 
 if __name__ == "__main__":
