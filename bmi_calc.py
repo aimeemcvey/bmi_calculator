@@ -64,5 +64,16 @@ def bmi_calc(w, h, n):
     return bmi
 
 
+def bmi_output(bmi):
+    if bmi < 18.50:
+        return "Underweight"
+    elif 18.50 <= bmi < 24.99:
+        return "Normal"
+    elif 25 <= bmi < 29.99:
+        return "Overweight"
+    else:  # bmi <130
+        return "Obese"
+
+
 if __name__ == "__main__":
     interface()
