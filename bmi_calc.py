@@ -34,7 +34,7 @@ def check_input(w, h):
     check_choice = input("  1 - Yes, 2 - No\n")
     if check_choice == '1':
         print("On to your BMI calculation!")
-        return
+        return w, h
     elif check_choice == '2':
         print("Please re-enter weight and height")
         data_input()
@@ -45,16 +45,22 @@ def check_input(w, h):
 
 def metric_analysis():
     data_input()
-    bmi_calc()
+    n = 1
+    bmi_calc(w, h, n)
 
 
 def imperial_analysis():
     data_input()
-    bmi_calc()
+    n = 2
+    bmi_calc(w, h, n)
 
 
-def bmi_calc(w, h):
-    bmi = w/(h**2)
+def bmi_calc(w, h, n):
+    if n == 1:  # metric
+        bmi = w/(h**2)
+    elif n == 2:  # imperial
+        bmi = 703*w/(h**2)
+    return bmi
 
 
 if __name__ == "__main__":
